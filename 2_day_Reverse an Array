@@ -1,0 +1,13 @@
+problem statement :- You are given an array of integers arr[]. Your task is to reverse the given array.
+
+void reverseArray(vector<int> &arr) {
+        // code here
+        int n = arr.size();
+        int j = n-1;
+        for(int i = 0;i<n/2;i++){
+           int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            j--;
+        }
+    }
