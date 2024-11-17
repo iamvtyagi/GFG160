@@ -1,0 +1,10 @@
+problem_statement:- Given an unsorted array arr[]. Rotate the array to the left (counter-clockwise direction) by d steps, where d is a positive integer. Do the mentioned change in the array in place.
+
+    void rotateArr(vector<int>& arr, int d) {
+        int n = arr.size();
+        d = d % n;
+        // code here
+        reverse(arr.begin(),arr.end());
+        reverse(arr.begin(),arr.end()-d);
+        reverse(arr.end()-d,arr.end()); 
+    }
