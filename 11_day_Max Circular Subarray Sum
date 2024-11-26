@@ -1,0 +1,28 @@
+code :- int circularSubarraySum(vector<int> &arr) {
+    int n = arr.size();
+    int totalSum = 0;
+    int maxSum = INT_MIN;
+    int currentMax = 0;
+    int minSum = INT_MAX;
+    int currentMin = 0;
+
+    for (int i = 0; i < n; i++) {
+        totalSum += arr[i];
+        currentMax = max(arr[i], currentMax + arr[i]);
+        maxSum = max(maxSum, currentMax);
+        currentMin = min(arr[i], currentMin + arr[i]);
+        minSum = min(minSum, currentMin);
+    }
+
+    if (maxSum < 0) {
+        return maxSum;
+    }
+
+    return max(maxSum, totalSum - minSum);
+}
+
+
+
+
+
+
